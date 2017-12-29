@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <title>Hello</title>
+  <style>
+    body {
+      background-color: #EEEEEE;
+      font-family: verdana;
+    }
+    div {
+      padding: 10px;
+    }
+    button {
+      background-color: #FAB2A3;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+       <button type="button" id="submit" name="submit">Say Hello</button>
+    </div>
+    <div id="output"></div>
+  </div>
+  <script>
+    $('#submit').click(function() {
+      var name = $('#name').val();
+
+      var output = "Hello " + name + "!";
+
+      if (name.length == 0) {
+        var errorMessage = "Please provide some input!"
+        $('#output').text(errorMessage).css("color", "red").css("font-weight", "bold");
+      } else {
+        $('#output').text(output).css("color", "green");
+      }
+    });
+  </script>
+</body>
+</html>

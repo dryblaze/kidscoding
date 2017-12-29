@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <title>Hello</title>
+</head>
+<body>
+  <div id="top"></div>
+  <p id="first">First</p>
+  <p>Second</p>
+  <div id="fadeOutHolder">
+    <button type="button" name="btnFadeOut" id="btnFadeOut">Fade out</button>
+  </div>
+  <div id="fadeInHolder">
+    <button type="button" name="btnFadeIn" id="btnFadeIn">Fade In</button>
+  </div>
+  <div>
+    <button type="button" name="btnBumpLower" id="btnBumpLower">Bump Lower</button>
+  </div>
+
+  <script>
+    $("#btnFadeOut").click(function() {
+      $('#first').fadeOut();
+      $('#fadeOutHolder').fadeOut();
+      $('#fadeInHolder').fadeIn();
+    });
+
+    $("#btnFadeIn").click(function() {
+      $('#first').fadeIn();
+      $('#fadeOutHolder').fadeIn();
+      $('#fadeInHolder').fadeOut();
+    });
+
+    $("#btnBumpLower").click(function() {
+      $('#top').append($('<p>&nbsp;</p>'));
+    });
+  </script>
+</body>
+</html>
