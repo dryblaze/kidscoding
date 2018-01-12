@@ -5,6 +5,11 @@
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <title>Calculator</title>
+  <style>
+    body {
+      background-color: #1FA883
+  }
+    </style>
 </head>
 <body>
   <div>
@@ -17,9 +22,57 @@
       <label for="numberB">number b:</label>
       <input type="text" id="numberB" name="numberB">
     </div>
+    <div>
+       <button type="button" id="add" name="add">add</button>
+    </div>
+    <div>
+       <button type="button" id="subtract" name="subtract">subtract</button>
+    </div>
+    <div>
+       <button type="button" id="multiply" name="multiply">multiply</button>
+    </div>
+    <div>
+       <button type="button" id="divied" name="divied">divied</button>
+    </div>
+    <div id="output"></div>
   </div>
   <script>
+  $('#add').click(function() {
+      var numberA = $('#numberA').val();
+      var numberB = $('#numberB').val();
+      var result = parseInt(numberA) + parseInt(numberB);
+    //var result = parseInt(numberA) - parseInt(numberB);
 
+    $('#output').text(result);
+  });
+
+  $('#subtract').click(function() {
+    var numberA = $('#numberA').val();
+    var numberB = $('#numberB').val();
+    var result = parseInt(numberA) - parseInt(numberB);
+      //var result = parseInt(numberA) - parseInt(numberB);
+
+      $('#output').text(result);
+
+  });
+
+  $('#multiply').click(function() {
+      var numberA = $('#numberA').val();
+      var numberB = $('#numberB').val();
+      var result = parseInt(numberA) * parseInt(numberB);
+    //var result = parseInt(numberA) - parseInt(numberB);
+
+    $('#output').text(result);
+  });
+
+  $('#divied').click(function() {
+      var numberA = $('#numberA').val();
+      var numberB = $('#numberB').val();
+      var result = parseInt(numberA) / parseInt(numberB);
+    //var result = parseInt(numberA) - parseInt(numberB);
+
+    $('#output').text(result);
+  });
   </script>
 </body>
 </html>
