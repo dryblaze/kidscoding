@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="3
+    crossorigin="anonymous"></script>
+  <title>Turn on/off cell</title>
+  <style>
+  div {
+    padding: 10px;
+  }
+  table {
+    border-collapse: collapse
+  }
+  table, td, th {
+    border: 1px solid black;
+  }
+  td {
+    width: 30px;
+    height: 30px;
+  }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <table>
+      <tr>
+        <td id="a1"></td>
+        <td id="a2"></td>
+        <td id="a3"></td>
+        <td id="a4"></td>
+        <td id="a5"></td>
+      </tr>
+      <tr>
+        <td id="b1"></td>
+        <td id="b2"></td>
+        <td id="b3"></td>
+        <td id="b4"></td>
+        <td id="b5"></td>
+      </tr>
+      <tr>
+        <td id="c1"></td>
+        <td id="c2"></td>
+        <td id="c3"></td>
+        <td id="c4"></td>
+        <td id="c5"></td>
+      </tr>
+    </table>
+    <div>
+       <button type="button" id="submit" name="submit">CLICK ME!</button>
+    </div>
+  </div>
+  <script>
+
+  const rows = ['a','b','c'];
+  
+  var turnOnCell = function(cellId) {
+    $('#' + cellId).css("background-color", "red");
+  }
+
+  $('#submit').click(function() {
+    for (var i=0; i<rows.length; i++) {
+      turnOnCell(rows[i] + '1');
+    }
+  });
+
+
+  </script>
+</body>
+</html>
