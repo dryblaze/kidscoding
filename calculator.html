@@ -44,41 +44,34 @@
     <div id="output"></div>
   </div>
   <script>
-  $('#add').click(function() {
+  var getNumbers = function() {
       var numberA = $('#numberA').val();
       var numberB = $('#numberB').val();
-      var result = parseInt(numberA) + parseInt(numberB);
-    //var result = parseInt(numberA) - parseInt(numberB);
+      return [parseInt(numberA),parseInt(numberB)];
+  };
 
-    $('#output').text(result);
+  $('#add').click(function() {
+      [numberA,numberB] = getNumbers();
+      var result = numberA + numberB;
+      $('#output').text(result);
   });
 
   $('#subtract').click(function() {
-    var numberA = $('#numberA').val();
-    var numberB = $('#numberB').val();
-    var result = parseInt(numberA) - parseInt(numberB);
-      //var result = parseInt(numberA) - parseInt(numberB);
-
+      [numberA,numberB] = getNumbers();
+      var result = numberA - numberB;
       $('#output').text(result);
-
   });
 
   $('#multiply').click(function() {
-      var numberA = $('#numberA').val();
-      var numberB = $('#numberB').val();
-      var result = parseInt(numberA) * parseInt(numberB);
-    //var result = parseInt(numberA) - parseInt(numberB);
-
-    $('#output').text(result);
+      [numberA,numberB] = getNumbers();
+      var result = numberA * numberB;
+      $('#output').text(result);
   });
 
   $('#divied').click(function() {
-      var numberA = $('#numberA').val();
-      var numberB = $('#numberB').val();
-      var result = parseInt(numberA) / parseInt(numberB);
-    //var result = parseInt(numberA) - parseInt(numberB);
-
-    $('#output').text(result);
+      [numberA,numberB] = getNumbers();
+      var result = numberA / numberB;
+      $('#output').text(result);
   });
   </script>
 </body>
